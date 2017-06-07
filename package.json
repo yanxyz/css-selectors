@@ -1,0 +1,13 @@
+{
+  "name": "css-selectors",
+  "version": "1.0.0",
+  "description": "CSS selectors overview",
+  "author": "Ivan Yan",
+  "license": "CC-BY-NC-ND-4.0",
+  "private": true,
+  "repository": "yanxyz/css-selectors",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.1",
+    "js-yaml": "^3.8.4"
+  }
+}

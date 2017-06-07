@@ -1,0 +1,394 @@
+## Elemental selectors
+---
+-
+  pattern: '*'
+  description: '任意类型的元素，即所有的元素。'
+  mdn: 'Universal_selectors'
+  level: 2
+  ie: 6
+-
+  pattern: 'E'
+  description: '元素的类型为 E，比如 div。'
+  mdn: 'Type_selectors'
+  level: 1
+  ie: 6
+
+## Attribute selectors
+---
+-
+  pattern: 'E.warning'
+  description: '元素 E 的 class list 包含 warning。'
+  mdn: 'Class_selectors'
+  level: 1
+  ie: 6
+-
+  pattern: 'E#myid'
+  description: '元素 E 的 id 为 myid。'
+  mdn: 'ID_selectors'
+  level: 1
+  ie: 6
+-
+  pattern: 'E[foo]'
+  description: '元素 E 有 foo attribute。'
+  mdn: 'Attribute_selectors'
+  level: 2
+  ie: 7
+-
+  pattern: 'E[foo="bar"]'
+  description: '元素 E 的 foo attribute 的值为 bar。'
+  mdn: 'Attribute_selectors'
+  level: 2
+  ie: 7
+-
+  pattern: 'E[foo="bar" i]'
+  description: '同上，不过值不区分大小写。其它 attribute selectors 也可以使用。'
+  mdn: 'Attribute_selectors'
+  level: 4
+  ie: -1
+-
+  pattern: 'E[foo~="bar"]'
+  description: '元素 E 的 foo attribute 的值为以空格分隔的列表，其中之一为 bar。'
+  mdn: 'Attribute_selectors'
+  level: 2
+  ie: 7
+-
+  pattern: 'E[foo|="en"]'
+  description: '元素 E 的 foo attribute 的值为 en 或以 en- 开始。'
+  example: '[name~="address"]'
+  mdn: 'Attribute_selectors'
+  level: 2
+  ie: 7
+-
+  pattern: 'E[foo^="bar"]'
+  description: '元素 E 的 foo attribute 的值以 bar 开头。'
+  example: '[name]'
+  mdn: 'Attribute_selectors'
+  level: 3
+  ie: 7
+-
+  pattern: 'E[foo$="bar"]'
+  description: '元素 E 的 foo attribute 的值以 bar 结尾。'
+  example: '[name]'
+  mdn: 'Attribute_selectors'
+  level: 3
+  ie: 7
+-
+  pattern: 'E[foo*="bar"]'
+  description: '元素 E 的 foo attribute 的值包含 bar。'
+  example: '[name]'
+  mdn: 'Attribute_selectors'
+  level: 3
+  ie: 7
+
+## Combinators
+---
+-
+  pattern: 'E F or E >> F'
+  description: '元素 F 是元素 E 的后代。后一种写法目前没有浏览器实现。'
+  mdn: 'Descendant_selectors'
+  level: 2
+  ie: 6
+-
+  pattern: 'E > F'
+  description: '元素 F 为元素 E 的子元素。'
+  mdn: 'Child_selectors'
+  level: 2
+  ie: 7
+-
+  pattern: 'E + F'
+  description: '元素 F 紧跟在兄弟元素 E 的后面。'
+  mdn: 'Adjacent_sibling_selectors'
+  level: 2
+  ie: 7
+-
+  pattern: 'E ~ F'
+  description: '元素 F 在兄弟元素 E 的后面。'
+  mdn: 'General_sibling_selectors'
+  level: 2
+  ie: 6
+
+## Tree-Structural pseudo-classes
+---
+-
+  pattern: 'E:root'
+  description: '元素 E 为文档根元素，HTML 文档即 &lt;html&gt;。'
+  level: 3
+  ie: 9
+-
+  pattern: 'E:empty'
+  description: '元素 E 没有子节点，只考虑元素和文本节点，注释等节点不考虑。'
+  level: 3
+  ie: 9
+-
+  pattern: 'E:blank'
+  description: '元素 E 为空只有空白。'
+  level: 4
+  ie: -1
+
+## Child-indexed Pseudo-classes
+---
+-
+  pattern: 'E:first-child'
+  description: '元素 E 是其父元素的第一个子元素。'
+  level: 2
+  ie: 7
+-
+  pattern: 'E:last-child'
+  description: '元素 E 是其父元素的最后一个子元素。'
+  level: 3
+  ie: 8
+-
+  pattern: 'E:only-child'
+  description: '元素 E 是其父元素的唯一的子元素。'
+  level: 3
+  ie: 9
+-
+  pattern: 'E:nth-child(n [of S]?)'
+  description: '元素 E 是其父元素（匹配 S）的第 n 个子元素。'
+  level: 3
+  ie: 9
+-
+  pattern: 'E:nth-last-child(n [of S]?)'
+  description: '元素 E 是其父元素（匹配 S）的倒数第 n 个子元素。'
+  level: 3
+  ie: 9
+
+## Typed Child-indexed Pseudo-classes
+---
+-
+  pattern: 'E:first-of-type'
+  description: '元素 E 是与它同类型的兄弟元素中第一个。'
+  level: 3
+  ie: 9
+-
+  pattern: 'E:last-of-type'
+  description: '元素 E 是与它同类型的兄弟元素中最后一个。'
+  level: 3
+  ie: 9
+-
+  pattern: 'E:only-of-type'
+  description: '元素 E 在它的兄弟元素中类型唯一。'
+  level: 3
+  ie: 9
+-
+  pattern: 'E:nth-of-type(n)'
+  description: '元素 E 是与它同类型的兄弟元素中第 n 个。'
+  level: 3
+  ie: 9
+-
+  pattern: 'E:nth-last-of-type(n)'
+  description: '元素 E 是与它同类型的兄弟元素中倒数第 n 个。'
+  level: 3
+  ie: 9
+
+## Linguistic Pseudo-classes
+---
+-
+  pattern: 'E:dir(ltr)'
+  description: '元素 E 文字方向从左到右。'
+  level: 4
+  ie: 6
+-
+  pattern: 'E:lang(zh, "*-hant")'
+  description: '元素 E 文字为中文或中文方言。'
+  level: 4
+  ie: 6
+
+## Location Pseudo-classes
+---
+-
+  pattern: 'E:any-link'
+  description: '元素 E 为锚点或链接。'
+  mdn: 'x'
+  level: 4
+  ie: -1
+-
+  pattern: 'E:link'
+  description: '元素 E 为链接且未访问。'
+  level: 1
+  ie: 6
+-
+  pattern: 'E:visited'
+  description: '元素 E 为链接且已访问。'
+  level: 1
+  ie: 6
+-
+  pattern: 'E:target'
+  description: '元素 E 为文档 URL hash 所指的目标。'
+  level: 3
+  ie: 9
+-
+  pattern: 'E:scope'
+  description: '元素 E 为参考点。'
+  level: 4
+  ie: -1
+
+## User Action Pseudo-classes
+---
+-
+  pattern: 'E:hover'
+  description: '鼠标在元素 E 上。'
+  level: 2
+  ie: 6
+-
+  pattern: 'E:active'
+  description: '元素 E 处于激活状态。'
+  level: 1
+  ie: 6
+-
+  pattern: 'E:focus'
+  description: '元素 E 获得焦点。'
+  level: 2
+  ie: 8
+-
+  pattern: 'E:focus-ring'
+  description: '元素 E 获得焦点，并且 UA 显示 focus 指示。'
+  level: 2
+  ie: -1
+-
+  pattern: 'E:drop'
+  description: '元素 E 能接受拖放。'
+  mdn: 'x'
+  level: 4
+  ie: -1
+-
+  pattern: 'E:drop(active)'
+  description: '元素 E 是当前拖放的 drop target 。'
+  mdn: 'x'
+  level: 4
+  ie: -1
+-
+  pattern: 'E:drop(valid)'
+  description: '元素 E 能接受当前拖放。'
+  mdn: 'x'
+  level: 4
+  ie: -1
+-
+  pattern: 'E:drop(invalid)'
+  description: '元素 E 不能接受当前拖放，不过可接受其它的。'
+  mdn: 'x'
+  level: 4
+  ie: -1
+
+## The Input Pseudo-classes
+---
+-
+  pattern: 'E:enabled <br> E:disabled'
+  description: '控件 E 是否可用。'
+  level: 3
+  ie: 9
+-
+  pattern: 'E:read-write <br> E:read-only'
+  description: '控件 E 是否可写。'
+  level: 4
+  ie: -1
+-
+  pattern: 'E:placeholder-shown'
+  description: '输入框 E 显示着占位符。'
+  mdn: 'x'
+  level: 4
+  ie: -1
+-
+  pattern: 'E:default'
+  description: '控件 E 是一组选项中默认选中的一项。'
+  level: 4
+  ie: -1
+-
+  pattern: 'E:checked'
+  description: '控件 E 被选中。'
+  level: 4
+  ie: 9
+-
+  pattern: 'E:indeterminate'
+  description: '控件 E 处于中间状态。'
+  level: 4
+  ie: '9*'
+-
+  pattern: 'E:valid <br> E:invalid'
+  description: '控件 E 验证是否通过。'
+  level: 4
+  ie: 10
+-
+  pattern: 'E:in-range <br> E:out-of-range'
+  description: '控件 E 的值是否在值域中。'
+  level: 4
+  ie: -1
+-
+  pattern: 'E:required <br> E:optional'
+  description: '控件 E 是否必选。'
+  level: 4
+  ie: 10
+-
+  pattern: 'E:user-error'
+  description: '控件 E 验证无效且弹出提示。'
+  mdn: 'x'
+  level: 4
+  ie: -1
+
+## Logical Combinations
+---
+-
+  pattern: 'E:matches(s1, s2)'
+  description: '元素 E 匹配 compound selector s1 或 s2。'
+  mdn: 'x'
+  level: 4
+  ie: -1
+-
+  pattern: 'E:not(s1, s2)'
+  description: '元素 E 不匹配 compound selector s1 和 s2。'
+  mdn: ':not()'
+  level: 4
+  ie: '9*'
+-
+  pattern: 'E:has(rs1, rs2)'
+  description: '以元素 E 为参考点，相对选择符 rs1 或 rs2 有匹配。'
+  level: 4
+  ie: -1
+
+## Time-dimensional Pseudo-classes
+---
+-
+  pattern: 'E:current'
+  description: '元素 E 在当前的画布上。'
+  mdn: 'x'
+  level: 4
+  ie: -1
+-
+  pattern: 'E:current(s)'
+  description: 'E:current 元素集合当中匹配选择符 s 的元素。'
+  mdn: 'x'
+  level: 4
+  ie: -1
+-
+  pattern: 'E:past'
+  description: '元素 E 在过去的画布上。'
+  mdn: 'x'
+  level: 4
+  ie: -1
+-
+  pattern: 'E:future'
+  description: '元素 E 在将来的画布上。'
+  mdn: 'x'
+  level: 4
+  ie: -1
+
+## Grid-Structural Selectors
+---
+-
+  pattern: 'F || E'
+  description: '元素 E 与 元素 F 同列。'
+  mdn: 'x'
+  level: 4
+  ie: -1
+-
+  pattern: 'E:nth-column(n)'
+  description: '元素 E 在第 n 列内。'
+  mdn: 'x'
+  level: 4
+  ie: -1
+-
+  pattern: 'E:nth-last-column(n)'
+  description: '元素 E 在倒数第 n 列内。'
+  mdn: 'x'
+  level: 4
+  ie: -1
